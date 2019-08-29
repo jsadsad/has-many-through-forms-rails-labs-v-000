@@ -7,4 +7,13 @@
   <br>
   <%= f.label :catagory_ids, "Catagories" %>
   <%= f.collection_check_boxes(:catagory_ids, Catagory.all, :id, :name )%>
+  <br>
+  <p>
+    New Catagory:
+    <%= f.fields_for :catagories do |catagory_field| %>
+     <%= catagory_field.text_field :name %>
+    <% end %>
+  </p>
+
+  <%= f.submit %>
 <% end %>
