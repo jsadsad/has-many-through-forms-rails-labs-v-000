@@ -18,3 +18,27 @@
     <li><%=link_to user.username, user_path(user) %></li>
   <% end %>
 </ul>
+
+<p>Comment on this:</p>
+<% form_for (@post.comments.build) %>
+  <%= f.hidden_field :post_id %>
+  <p>
+    Choose a username:
+    <%= f.collection_select :user_id, User.all, :id, :username, {:include_blank => 'Please select or create a user'} %>
+  </p>
+  <br>
+  <p>
+    Create a user:
+    <%= f.fields_for :user, User.new do |user_field| %>
+    <%= user_field.label :username, "Username:" %>
+    <%= user.field.text_field :username %>
+    <% end %>
+  </p>
+  <br>
+  <p>
+    <%= f.label :content, "New Comment" %>
+    <%= f.text_area :content %>
+  </p>
+  <br>
+  <%= f.submit %>
+<% end %>
