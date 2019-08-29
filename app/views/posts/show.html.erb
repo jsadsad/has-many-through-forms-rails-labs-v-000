@@ -8,4 +8,6 @@
   <% end %>
 </ul>
 
-<% @post.comm
+<% @post.comments.each do |comment| %>
+  <p><%= comment.user.username %> says <%= comment.content %></p>
+<% end %>
