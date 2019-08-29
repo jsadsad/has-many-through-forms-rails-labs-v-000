@@ -1,2 +1,2 @@
 --format d
---fast-fail
+--fail-fast
