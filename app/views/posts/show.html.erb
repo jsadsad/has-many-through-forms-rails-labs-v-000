@@ -31,7 +31,7 @@
     Create a user:
     <%= f.fields_for :user, User.new do |user_field| %>
       <%= user_field.label :username, "Username:" %>
-      <%= user.field.text_field :username %>
+      <%= user_field.text_field :username %>
     <% end %>
   </p>
   <br>
