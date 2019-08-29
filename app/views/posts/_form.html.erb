@@ -6,7 +6,7 @@
   <%= f.text_area :content %>
   <br>
   <%= f.label :category_ids, "Categories" %>
-  <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name )%>
+  <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
   <br>
   <p>
     New Catagory:
