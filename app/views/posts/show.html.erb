@@ -3,7 +3,9 @@
 <p><%= @post.content %></p>
 
 <ul>
-  <% @post.category.each do |category| %>
+  <% @post.categories.each do |category| %>
     <li><%= category.name %></li>
   <% end %>
 </ul>
+
+<% @post.comm
