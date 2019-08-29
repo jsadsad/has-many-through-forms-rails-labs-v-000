@@ -10,8 +10,9 @@
   <br>
   <p>
     Create a Catagory:
-    <%= f.fields_for :categories do |category_field| %>
-     <%= category_field.text_field :name %>
+    <%= f.fields_for :categories, post.categories.build do |category_field| %>
+      <%= category_field.label :name %>
+      <%= category_field.text_field :name %>
     <% end %>
   </p>
 
